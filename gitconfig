@@ -1,0 +1,7 @@
+[user]
+	name = Jzavrk
+	email = cynek@gmx.com
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
