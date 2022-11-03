@@ -13,8 +13,8 @@ compinit
 export EDITOR=nvim
 export XDG_RUNTIME_DIR=/tmp
 export MOZ_ENABLE_WAYLAND=1
-cargo_path=/home/jiji/.cargo/bin
-local_path=/home/jiji/.local/bin
+cargo_path=/home/$USER/.cargo/bin
+local_path=/home/$USER/.local/bin
 emscripten_path=/usr/lib/emscripten
 export PATH=${PATH:+${PATH}:}$cargo_path:$local_path:$emscripten_path
 
