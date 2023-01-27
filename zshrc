@@ -11,7 +11,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 export EDITOR=nvim
-export XDG_RUNTIME_DIR=/tmp
+# Makes PulseAudio buggy
+#export XDG_RUNTIME_DIR=/tmp
 export MOZ_ENABLE_WAYLAND=1
 cargo_path=/home/$USER/.cargo/bin
 local_path=/home/$USER/.local/bin
