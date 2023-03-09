@@ -22,6 +22,8 @@ set backspace=indent,eol,start
 set laststatus=1
 set background=dark
 
+set mouse=
+
 " Custom
 set listchars=eol:₿,tab:Σ+,trail:Ξ,nbsp:Δ
 
