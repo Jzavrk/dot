@@ -34,6 +34,9 @@ let &shiftwidth=tabs
 let &tabstop=tabs
 "set expandtab
 
+let g:tex_flavor='latex'
+let asmsyntax='nasm'
+
 " Maps
 let mapleader = " "
 nmap <leader>h :nohlsearch<CR>
