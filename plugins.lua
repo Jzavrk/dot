@@ -47,7 +47,21 @@ return require('packer').startup(function(use)
   -- Post-install/update hook with neovim command
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason.nvim'
+  use {
+	'williamboman/mason.nvim',
+    opt = false,
+	config = function()
+	  require('mason').setup {
+		ui = {
+		  icons = {
+			package_installed = "✓",
+			  package_pending = "➜",
+			  package_uninstalled = "✗"
+			}
+		}
+	}
+  end,
+  }
 
   use {
     'phaazon/hop.nvim',
