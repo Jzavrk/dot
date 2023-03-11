@@ -71,6 +71,8 @@ return require('packer').startup(function(use)
   }
   use 'neovim/nvim-lspconfig'
   use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-lint'
+  use { 'mhartington/formatter.nvim', opt = false }
 
   use {
     'phaazon/hop.nvim',
