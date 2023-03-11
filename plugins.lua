@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'JoosepAlviste/palenightfall.nvim'
-  use {'dracula/vim', as = 'dracula'}
+  use { 'dracula/vim', as = 'dracula' }
   use 'preservim/nerdcommenter'
   use 'flazz/vim-colorschemes'
   use 'rstacruz/vim-closer'
@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
       -- refer to the configuration section below
       }
     end,
-	opt = false
+    opt = false
   }
   vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
   use {
@@ -42,26 +42,35 @@ return require('packer').startup(function(use)
   --use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 
   -- Load on an autocommand event
-  use {'andymass/vim-matchup', event = 'VimEnter'}
+  use { 'andymass/vim-matchup', event = 'VimEnter' }
 
   -- Post-install/update hook with neovim command
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'neovim/nvim-lspconfig'
+
   use {
-	'williamboman/mason.nvim',
+    'williamboman/mason.nvim',
     opt = false,
-	config = function()
-	  require('mason').setup {
-		ui = {
-		  icons = {
-			package_installed = "✓",
-			  package_pending = "➜",
-			  package_uninstalled = "✗"
-			}
-		}
-	}
-  end,
+    config = function()
+      require('mason').setup {
+        ui = {
+          icons = {
+          package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        }
+      }
+    end,
   }
+  use {
+    'williamboman/mason-lspconfig.nvim',
+    opt = false,
+    config = function()
+      require('mason-lspconfig').setup()
+    end,
+  }
+  use 'neovim/nvim-lspconfig'
+  use 'mfussenegger/nvim-dap'
 
   use {
     'phaazon/hop.nvim',
@@ -69,10 +78,10 @@ return require('packer').startup(function(use)
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
       require'hop'.setup {
-		keys = 'qsdfghjklmazertyuiopwxcvbn',
-		quit_key = '<ESC>',
-		perm_method = TrieBacktrackFilling
-	  }
+        keys = 'qsdfghjklmazertyuiopwxcvbn',
+        quit_key = '<ESC>',
+        perm_method = TrieBacktrackFilling
+      }
     end,
   }
   -- Load on a combination of conditions: specific filetypes or commands
