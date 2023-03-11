@@ -9,7 +9,7 @@ lua require('plugins')
 colorscheme dracula
 
 " Maps
-nmap <leader>u :UndotreeToggle<CR>
-nmap <leader>s :HopWord<CR>
-nmap <leader>S :HopLine<CR>
-nmap <leader>n :Neotree<CR>
+nmap <silent> <leader>u :UndotreeToggle<CR>
+nmap <silent> <leader>s :HopWord<CR>
+nmap <silent> <leader>S :HopLine<CR>
+nmap <silent> <leader>n :Neotree<CR>

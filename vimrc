@@ -39,7 +39,7 @@ let asmsyntax='nasm'
 
 " Maps
 let mapleader = " "
-nmap <leader>h :nohlsearch<CR>
+nmap <silent> <leader>h :nohlsearch<CR>
 " Windows specific
 nnoremap <leader>t <C-]>
 nnoremap <leader>v <C-v>
