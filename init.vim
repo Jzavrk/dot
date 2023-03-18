@@ -13,7 +13,8 @@ augroup end
 colorscheme dracula
 
 " Maps
-nmap <leader>u :UndotreeToggle<CR>
+nmap <leader>u :UndotreeShow <bar> UndotreeFocus<CR>
+nmap <leader>U :UndotreeHide<CR>
 nmap <leader>s :HopWord<CR>
 nmap <leader>S :HopLine<CR>
 nmap <leader>n :Neotree<CR>
