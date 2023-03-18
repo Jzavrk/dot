@@ -46,6 +46,6 @@ nnoremap <leader>v <C-v>
 tnoremap <Esc> <C-\><C-n>
 "tnoremap <leader>t <C-]>
 " Git patch maps
-vmap <leader>- :s/^- /  /<CR>
-vmap <leader>+ :g/^+ /d<CR>
+vmap <leader>- :s/^-/ /<CR>
+vmap <leader>+ :g/^+/d<CR>
 nmap <leader>* :echo "🖕, not implemented."<CR>
