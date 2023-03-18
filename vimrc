@@ -32,7 +32,7 @@ let tabs = 4
 let &softtabstop=tabs
 let &shiftwidth=tabs
 let &tabstop=tabs
-"set expandtab
+set expandtab
 
 let g:tex_flavor='latex'
 let asmsyntax='nasm'
