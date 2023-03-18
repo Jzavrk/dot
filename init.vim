@@ -18,3 +18,4 @@ nmap <leader>U :UndotreeHide<CR>
 nmap <leader>s :HopWord<CR>
 nmap <leader>S :HopLine<CR>
 nmap <leader>n :Neotree<CR>
+cabbrev git Git
