@@ -15,11 +15,10 @@ return require('packer').startup(function(use)
     "folke/todo-comments.nvim",
     --branch =  "neovim-pre-0.8.0",
     requires = "nvim-lua/plenary.nvim",
+    event = "BufRead",
     config = function()
       require("todo-comments").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
+        signs = true,
       }
     end,
     opt = false
@@ -37,6 +36,13 @@ return require('packer').startup(function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'mbbill/undotree'
   use 'tpope/vim-fugitive'
+  use {
+    'lewis6991/gitsigns.nvim',
+    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
   -- Lazy loading:
   -- Load on specific commands
   --use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
@@ -86,6 +92,14 @@ return require('packer').startup(function(use)
       }
     end,
   }
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup()
+    end
+  }
+
+
   -- Load on a combination of conditions: specific filetypes or commands
   -- Also run code after load (see the "config" key)
   --use {

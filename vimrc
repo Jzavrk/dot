@@ -32,7 +32,7 @@ let tabs = 4
 let &softtabstop=tabs
 let &shiftwidth=tabs
 let &tabstop=tabs
-"set expandtab
+set expandtab
 
 let g:tex_flavor='latex'
 let asmsyntax='nasm'
@@ -46,6 +46,6 @@ nnoremap <leader>v <C-v>
 tnoremap <Esc> <C-\><C-n>
 "tnoremap <leader>t <C-]>
 " Git patch maps
-vmap <leader>- :s/^- /  /<CR>
-vmap <leader>+ :g/^+ /d<CR>
+vmap <leader>- :s/^-/ /<CR>
+vmap <leader>+ :g/^+/d<CR>
 nmap <leader>* :echo "🖕, not implemented."<CR>
