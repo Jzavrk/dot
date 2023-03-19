@@ -99,6 +99,7 @@ return require('packer').startup(function(use)
     end
   }
 
+  use 'editorconfig/editorconfig-vim'
 
   -- Load on a combination of conditions: specific filetypes or commands
   -- Also run code after load (see the "config" key)
