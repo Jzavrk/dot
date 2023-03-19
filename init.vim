@@ -19,3 +19,4 @@ nmap <silent> <leader>s :HopWord<CR>
 nmap <silent> <leader>S :HopLine<CR>
 nmap <silent> <leader>n :Neotree<CR>
 cabbrev git Git
+cabbrev gitsigns Gitsigns
