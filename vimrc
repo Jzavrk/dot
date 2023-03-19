@@ -27,13 +27,6 @@ set mouse=
 " Custom
 set listchars=eol:₿,tab:Σ+,trail:Ξ,nbsp:Δ
 
-let tabs = 4
-" Default tabs
-let &softtabstop=tabs
-let &shiftwidth=tabs
-let &tabstop=tabs
-set expandtab
-
 let g:tex_flavor='latex'
 let asmsyntax='nasm'
 
