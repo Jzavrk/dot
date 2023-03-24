@@ -10,7 +10,6 @@ return require('packer').startup(function(use)
   use { 'dracula/vim', as = 'dracula' }
   use 'preservim/nerdcommenter'
   use 'flazz/vim-colorschemes'
-  use 'rstacruz/vim-closer'
   use {
     "folke/todo-comments.nvim",
     --branch =  "neovim-pre-0.8.0",
@@ -27,7 +26,7 @@ return require('packer').startup(function(use)
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
