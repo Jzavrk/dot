@@ -14,7 +14,7 @@ set autoindent		" Auto-indent new lines
 set smartindent		" Enable smart-indent
 set smarttab		" Enable smart-tabs
 set scrolloff=5     " lines to the end while scrolling
-"set cursorline 
+"set cursorline
 "set digraph	" Special characters e <BS> >
                 " Or use CTRL-K e>
 set undolevels=1000
@@ -34,7 +34,7 @@ let asmsyntax='nasm'
 let mapleader = " "
 nmap <silent> <leader>h :nohlsearch<CR>
 " Windows specific
-nnoremap <leader>t <C-]>
+nnoremap <leader>T <C-]>
 nnoremap <leader>v <C-v>
 tnoremap <Esc> <C-\><C-n>
 "tnoremap <leader>t <C-]>
