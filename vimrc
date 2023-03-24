@@ -25,7 +25,7 @@ set background=dark
 set mouse=
 
 " Custom
-set listchars=eol:₿,tab:Σ+,trail:Ξ,nbsp:Δ
+set listchars=eol:₿,tab:Σ+3,trail:Δ,nbsp:Ξ
 
 let g:tex_flavor='latex'
 let asmsyntax='nasm'
