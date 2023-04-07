@@ -96,17 +96,10 @@ return require('packer').startup(function(use)
     'williamboman/mason.nvim',
     opt = false,
     config = function()
-      require('mason').setup {
-        ui = {
-          icons = {
-          package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-          }
-        }
-      }
+      require('mason').setup{}
     end,
   }
+  use 'mason-org/mason-registry'
   use {
     'williamboman/mason-lspconfig.nvim',
     opt = false,
@@ -114,7 +107,14 @@ return require('packer').startup(function(use)
       require('mason-lspconfig').setup()
     end,
   }
-  use 'neovim/nvim-lspconfig'
+  use {
+    'neovim/nvim-lspconfig',
+    config = function()
+      local lsps = require('lspconfig')
+      lsps.clangd.setup{}
+      lsps.lua_ls.setup{}
+    end
+  }
   use 'mfussenegger/nvim-dap'
   use 'mfussenegger/nvim-lint'
   use { 'mhartington/formatter.nvim', opt = false }
@@ -127,7 +127,6 @@ return require('packer').startup(function(use)
       require'hop'.setup {
         keys = 'qsdfghjklmazertyuiopwxcvbn',
         quit_key = '<ESC>',
-        perm_method = TrieBacktrackFilling
       }
     end,
   }
