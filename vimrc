@@ -34,8 +34,8 @@ let asmsyntax='nasm'
 let mapleader = " "
 nmap <silent> <leader>h :nohlsearch<CR>
 " Windows specific
-nnoremap <leader>T <C-]>
-nnoremap <leader>v <C-v>
+"nnoremap <leader>T <C-]>
+"nnoremap <leader>v <C-v>
 tnoremap <Esc> <C-\><C-n>
 "tnoremap <leader>t <C-]>
 " Git patch maps
