@@ -8,19 +8,35 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'JoosepAlviste/palenightfall.nvim'
   use { 'dracula/vim', as = 'dracula' }
+  use 'EdenEast/nightfox.nvim'
+  use 'folke/tokyonight.nvim'
   use 'preservim/nerdcommenter'
   use 'flazz/vim-colorschemes'
   use {
-    "folke/todo-comments.nvim",
-    --branch =  "neovim-pre-0.8.0",
-    requires = "nvim-lua/plenary.nvim",
-    event = "BufRead",
+    'nvim-tree/nvim-web-devicons',
     config = function()
-      require("todo-comments").setup {
-        signs = true,
-      }
+      require('nvim-web-devicons').setup{}
+    end
+  }
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup{}
     end,
     opt = false
+  }
+
+  use {
+    'folke/trouble.nvim',
+    requires = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require('trouble').setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   }
   vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
   use {
@@ -94,7 +110,7 @@ return require('packer').startup(function(use)
 
   use {
     'williamboman/mason.nvim',
-    opt = false,
+    run = ":MasonUpdate",
     config = function()
       require('mason').setup{}
     end,
@@ -107,14 +123,7 @@ return require('packer').startup(function(use)
       require('mason-lspconfig').setup()
     end,
   }
-  use {
-    'neovim/nvim-lspconfig',
-    config = function()
-      local lsps = require('lspconfig')
-      lsps.clangd.setup{}
-      lsps.lua_ls.setup{}
-    end
-  }
+  use 'neovim/nvim-lspconfig'
   use 'mfussenegger/nvim-dap'
   use 'mfussenegger/nvim-lint'
   use { 'mhartington/formatter.nvim', opt = false }
@@ -138,7 +147,32 @@ return require('packer').startup(function(use)
   }
 
   use 'editorconfig/editorconfig-vim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function()
+      require('lualine').setup()
+    end
+  }
 
+  use {
+    'danymat/neogen',
+    config = function()
+        require('neogen').setup {}
+    end,
+    requires = 'nvim-treesitter/nvim-treesitter',
+    -- Uncomment next line if you want to follow only stable versions
+    -- tag = "*"
+  }
+  use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+
+  use {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function()
+      require('telescope').setup()
+    end
+  }
   -- Load on a combination of conditions: specific filetypes or commands
   -- Also run code after load (see the "config" key)
   --use {
